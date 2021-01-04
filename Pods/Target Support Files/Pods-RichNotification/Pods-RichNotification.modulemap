@@ -1,0 +1,6 @@
+framework module Pods_RichNotification {
+  umbrella header "Pods-RichNotification-umbrella.h"
+
+  export *
+  module * { export * }
+}
