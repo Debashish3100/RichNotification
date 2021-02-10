@@ -33,8 +33,12 @@ class NotificationService: UNNotificationServiceExtension {
                 }
             }
             
+            //---------------------------------------
+            
             //MARK: Save to CoreData
             
+            ///Here, I am saving notificaiton to coredata. # Message # is the subclass of NSManagedObject.
+            ///If you don't need this, comment out this section !
             if let aps = bestAttemptContent.userInfo["aps"] as? [String: Any] {
                 if let data = self.getNotification(userInfo: aps) {
                     let msg = Message(context: self.coreDataManager.mainManagedObjectContext)
@@ -43,6 +47,8 @@ class NotificationService: UNNotificationServiceExtension {
                     self.coreDataManager.saveChanges()
                 }
             }
+            
+            //---------------------------------------
             
             //MARK: Modfiy Notification
             
